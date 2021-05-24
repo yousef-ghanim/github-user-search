@@ -8,11 +8,11 @@ import User from "../components/User";
 const Dashboard = () => {
   return (
     <main>
-      <Navbar />
-      <Search />
+      {/* <Navbar /> */}
+      {/* <Search /> */}
       <Info />
       <User />
-      <Repos />
+      {/* <Repos /> */}
     </main>
   );
 };
