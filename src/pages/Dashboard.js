@@ -3,7 +3,6 @@ import loadingImage from "../images/preloader.gif";
 import Navbar from "../components/Navbar";
 import Info from "../components/Info";
 import Search from "../components/Search";
-import Repos from "../components/Repos";
 import User from "../components/User";
 import { GithubContext } from "../context/context";
 const Dashboard = () => {
@@ -23,7 +22,6 @@ const Dashboard = () => {
       <Search />
       <Info />
       <User />
-      {/* <Repos /> */}
     </main>
   );
 };

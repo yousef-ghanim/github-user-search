@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import mockUser from "./mockData.js/mockUser";
-import mockRepos from "./mockData.js/mockRepos";
 import mockFollowers from "./mockData.js/mockFollowers";
 import axios from "axios";
 
@@ -10,7 +9,6 @@ const GithubContext = React.createContext();
 
 const GithubProvider = ({ children }) => {
   const [githubUser, setGithubUser] = useState(mockUser);
-  // const [repos, setRepos] = useState(mockRepos);
   const [followers, setFollowers] = useState(mockFollowers);
   // request loading
   const [requests, setRequests] = useState(0);
@@ -26,12 +24,11 @@ const GithubProvider = ({ children }) => {
     );
     if (response) {
       setGithubUser(response.data);
+      // followers
       const { followers_url } = response.data;
-
       axios(`${followers_url}?per_page=100`).then((response) =>
         setFollowers(response.data)
       );
-      // https://api.github.com/users/john-smilga/followers
     } else {
       toggleError(true, "there is no user with that username");
     }
@@ -62,7 +59,6 @@ const GithubProvider = ({ children }) => {
     <GithubContext.Provider
       value={{
         githubUser,
-        // repos,
         followers,
         requests,
         error,
