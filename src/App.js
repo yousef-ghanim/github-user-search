@@ -5,7 +5,7 @@ import Error from "./pages/Error";
 import PrivateRoute from "./pages/PrivateRoute";
 import AuthWrapper from "./pages/AuthWrapper";
 
-import { HashRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
   return (
